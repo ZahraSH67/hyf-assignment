@@ -32,16 +32,23 @@ let gardenSizeInM2;
 let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 // Your friend Peter is considering a house that is 8m wide, 10m deep and 10m high. 
 // The garden size is 100m2. The house costs 2.500.000. 
+let housePricePaid = 2500000;
 volumeInMeters = 10 * 10 * 8;
 housePrice = volumeInMeters * 2.5 * 1000 + 100 * 300;
-console.log(`Peter's housePrice is ${ housePrice}`); //2030000
+const isPeterPayingTooMuch = housePricePaid >= housePrice; // true
+console.log(`Peter's housePrice is ${ housePrice}`); //2.030.000 < 2.500.000
+console.log(isPeterPayingTooMuch);
 //Peter is paying too much
 
 // Your friend Julia is considering a house that is 5m wide, 11m deep and 8m high.
 //  The garden size is 70m2. This house costs 1.000.000.
+housePricePaid = 1000000;
 volumeInMeters = 11 * 8 * 5;
 housePrice = volumeInMeters * 2.5 * 1000 + 70 * 300;
-console.log(`Julia's housePrice is : ${housePrice}`) // 1121000
+const isJuliaPayingTooMuch = housePricePaid >= housePrice; // true
+console.log(`Julia's housePrice is : ${housePrice}`) // 1.121.000 > 1.000.000
+console.log(isJuliaPayingTooMuch);
+
 //Julia is paying too little 
 
 
