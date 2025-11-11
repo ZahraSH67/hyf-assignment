@@ -45,3 +45,18 @@ function getEventWeekday(eventDay){
 
 console.log(getEventWeekday(9));
 console.log(getEventWeekday(4)); 
+
+
+function todayClothes(temp){
+    if (temp <= 0) {
+        return "Wear a jacket, hat, and gloves. It's very cold!";
+    } else if (temp <= 15) {
+        return "Wear a light coat.";
+    } else if (temp <= 22) {
+        return "Wear jeans and a t-shirt.";
+    } else {
+        return "Wear shorts and a t-shirt.";
+    }
+}
+const clothesSuggestion =todayClothes(18);
+console.log(clothesSuggestion);
