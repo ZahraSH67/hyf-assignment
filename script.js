@@ -1,5 +1,7 @@
 function getFullName(firstName = "John", surname = "Smith", useFormalName = false, gender = "") {
- 
+   if (!firstName || !surname) {
+        return "Error: Please provide both first name and surname.";
+    }
     if (useFormalName === true) {
         if (gender === "Male") {
             return "Lord " + firstName + " " + surname;
@@ -60,3 +62,54 @@ function todayClothes(temp){
 }
 const clothesSuggestion =todayClothes(18);
 console.log(clothesSuggestion);
+
+
+
+
+const class07Students = [];
+
+function addStudentToClass(studentName) {
+    if (!studentName) {
+        console.log("You cannot add an empty string to a class.");
+        return;
+    }
+ 
+    if (class07Students.includes(studentName)) {
+        console.log(`Student ${studentName} is already in the class`);
+        return;
+    }
+  
+
+    if (studentName === "Queen Margarite") {
+        class07Students.push(studentName);
+        return;
+    }
+
+
+    if (class07Students.length >= 6) {
+        console.log("Cannot add more students to class 07");
+        return;
+    }
+    class07Students.push(studentName);
+}
+
+
+
+function getNumberOfStudents() {
+    return class07Students.length;
+}
+
+
+addStudentToClass("Jim");
+addStudentToClass("Albert");
+addStudentToClass("Joe");
+addStudentToClass("Sarah");
+addStudentToClass("Tommy");
+addStudentToClass("Luna");
+addStudentToClass("Joe");
+addStudentToClass("");
+addStudentToClass("Queen Margarite");
+addStudentToClass("Jonas"); 
+
+console.log(class07Students); 
+console.log(getNumberOfStudents()); 
