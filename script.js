@@ -28,3 +28,20 @@ const fullName5 = getFullName("", "");
 console.log(fullName5); // Should show error message
 const fullName6 = getFullName();
 console.log(fullName6); 
+
+
+
+
+
+weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+function getEventWeekday(eventDay){
+    const todayDate = new Date;
+    const todayDay = todayDate.getDay();
+    console.log(todayDay)
+    const eventDayIndex = (todayDay + eventDay) % 7;
+    return weekDays[eventDayIndex];
+}
+
+
+console.log(getEventWeekday(9));
+console.log(getEventWeekday(4)); 
