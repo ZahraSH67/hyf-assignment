@@ -141,7 +141,7 @@ function addCandy(candyType, weight) {
   boughtCandyPrices.push(totalPrice);
 }
 
-// 💰 Random budget between 0 and 100
+// Random budget between 0 and 100
 const amountToSpend = Math.random() * 100;
 
 
