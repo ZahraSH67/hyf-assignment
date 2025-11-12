@@ -113,3 +113,59 @@ addStudentToClass("Jonas");
 
 console.log(class07Students); 
 console.log(getNumberOfStudents()); 
+
+
+
+
+
+
+
+const boughtCandyPrices = [];
+function addCandy(candyType, weight) {
+  let pricePerGram = 0;
+
+  if (candyType === "sweet") {
+    pricePerGram = 0.5;
+  } else if (candyType === "chocolate") {
+    pricePerGram = 0.7;
+  } else if (candyType === "toffee") {
+    pricePerGram = 1.1;
+  } else if (candyType === "chewing-gum") {
+    pricePerGram = 0.03;
+  } else {
+    console.log("Unknown candy type!");
+    return;
+  }
+
+  const totalPrice = pricePerGram * weight;
+  boughtCandyPrices.push(totalPrice);
+}
+
+// 💰 Random budget between 0 and 100
+const amountToSpend = Math.random() * 100;
+
+
+function canBuyMoreCandy() {
+  let totalSpent = 0;
+
+  for (let i = 0; i < boughtCandyPrices.length; i++) {
+    totalSpent += boughtCandyPrices[i];
+  }
+
+  return totalSpent < amountToSpend;
+}
+
+addCandy("sweet", 20);
+addCandy("chocolate", 10);
+addCandy("toffee", 30);
+addCandy("chewing-gum", 100);
+
+
+if (canBuyMoreCandy()) {
+  console.log("You can buy more, so please do!");
+} else {
+  console.log("Enough candy for you!");
+}
+
+console.log("Amount to spend:", amountToSpend.toFixed(2));
+console.log("Bought candy prices:", boughtCandyPrices);
