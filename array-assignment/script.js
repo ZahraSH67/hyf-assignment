@@ -153,12 +153,13 @@ logOutNotesFormatted();
 
 
 const activities = [];
-function addActivity(date , activity, duration){
+function addActivity(activity, duration){
+    const date = new Date().toLocaleDateString("en-US"); 
     activities.push(({date, activity, duration}))
 }
-const firstActivity = addActivity("23/7-18", "Youtube", 30);
-const secondActivity = addActivity("18/11", "Instagram", 45)
-const thirdActivity = addActivity("20/11", "Tweeter", 60)
+const firstActivity = addActivity("Youtube", 30);
+const secondActivity = addActivity("Instagram", 45)
+const thirdActivity = addActivity("Tweeter", 60)
 console.log(activities)
 
 /*
@@ -173,21 +174,48 @@ const limitation = 120
 function showStatus(){
     let totalAmount = 0
 
-    if(activities.length == 0){
+    if(activities.length === 0){
         console.log("Add some activities before calling showStatus")
-    }else{
-        for(let i = 0; i <  activities.length ; i++)
-        totalAmount += activities[i].duration
-    if(totalAmount < limitation){
-         return `You have added ${ activities.length} activities. They amount to ${totalAmount} min. of usage`
-    }else{
-        return "You have reached your limit, no more smartphoning for you!"
     }
-       
+        let today = new Date().toLocaleDateString("en-US");
+        let totalForToday = 0;
+        let countForToday = 0;
+        for (let i = 0; i < activities.length; i++) {
+        if (activities[i].date === today) {
+            totalForToday += activities[i].duration;
+            countForToday++;
+        }
+    }
 
+    if (countForToday === 0) {
+        return "No activities found for today.";
     }
-    
+
+    if (totalForToday < limitation) {
+        return `You have added ${countForToday} activities today. They amount to ${totalForToday} min of usage.`;
+    } else {
+        return "You have reached your limit, no more smartphoning for you!";
+    }
+        
 }
 
 
 console.log(showStatus(activities)); // will log out this "You have added 3 activities. They amount to 78 min. of usage"
+
+function mostTimeOfToday() {
+    if (activities.length === 0) {
+        return "No activities recorded.";
+    }
+
+    let longest = activities[0];
+
+    for (let i = 1; i < activities.length; i++) {
+        if (activities[i].duration > longest.duration) {
+            longest = activities[i];
+        }
+    }
+
+    return `Your most time-consuming activity is ${longest.activity} with ${longest.duration} minutes.`;
+}
+
+console.log(mostTimeOfToday())
