@@ -85,7 +85,7 @@ logOutSeriesText(seriesDurations)
 
 const notes = [];
 function saveNote(content, id){
-    notes.push(({content, id}))
+    notes.push(({content, id, done:false}))
 }
 saveNote("Pick up groceries", 1);
 saveNote("Do laundry", 2);
@@ -113,10 +113,39 @@ console.log(firstNote);
 
 
 
-function logOutNotesFormatted(){
-     for(let i = 0; i < notes.length; i++){
-        const savedNotes = notes[i]
-       console.log(`The note with id: ${savedNotes.id}, has the following note text: ${savedNotes.content}`)
+// function logOutNotesFormatted(){
+//      for(let i = 0; i < notes.length; i++){
+//         const savedNotes = notes[i]
+//        console.log(`The note with id: ${savedNotes.id}, has the following note text: ${savedNotes.content}`)
+// }
+// }
+// logOutNotesFormatted()
+
+
+
+
+//Add the ability to "mark a note as done"
+function markNoteAsDone(id) {
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i].id === id) {
+      notes[i].done = true;
+      console.log(`Note with id ${id} is now marked as DONE.`);
+      return;
+    }
+  }
+  console.log("Note not found!");
 }
+
+function logOutNotesFormatted() {
+  for (let i = 0; i < notes.length; i++) {
+    const savedNotes = notes[i];
+    console.log(
+      `ID: ${savedNotes.id} | Text: ${savedNotes.content} | Done: ${savedNotes.done ? "✔️" : "❌"}`
+    );
+  }
 }
-logOutNotesFormatted()
+
+markNoteAsDone(2);
+logOutNotesFormatted();
+
+
