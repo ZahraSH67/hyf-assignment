@@ -169,3 +169,39 @@ if (canBuyMoreCandy()) {
 
 console.log("Amount to spend:", amountToSpend.toFixed(2));
 console.log("Bought candy prices:", boughtCandyPrices);
+
+  
+
+
+
+
+
+// const boughtCandyPrices = [];
+// function addCandy(candyType, weight){
+// const candyPricesMap = {
+//   sweet : 0.5,
+//   chocolate : 0.7,
+//   toffee: 1.1,
+//   "chewing-gum": 0.03
+// };
+// const candyPrice = weight * candyPricesMap[candyType];
+// boughtCandyPrices.push(candyPrice);
+// }
+
+
+// // // Random budget between 0 and 100
+// // const amountToSpend = Math.random() * 100;
+// function canBuyMoreCandies() {
+// let total = 0;
+// for (let i = 0; i < boughtCandyPrices.length; i++) {
+//  total+= boughtCandyPrices[i];
+// }
+// return total < amountToSpent;
+// }
+// const canGetMore = canBuyMoreCandies();
+// if(canGetMore === true){
+//   console.log("You can buy more, so please do!")
+// }else{
+//   console.log("Enough")
+// }
+
