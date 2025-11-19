@@ -149,3 +149,45 @@ markNoteAsDone(2);
 logOutNotesFormatted();
 
 
+
+
+
+const activities = [];
+function addActivity(date , activity, duration){
+    activities.push(({date, activity, duration}))
+}
+const firstActivity = addActivity("23/7-18", "Youtube", 30);
+const secondActivity = addActivity("18/11", "Instagram", 45)
+const thirdActivity = addActivity("20/11", "Tweeter", 60)
+console.log(activities)
+
+/*
+activities should now look like this
+[{
+    date: '23/7-18',
+    activity: 'Youtube',
+    duration: 30,
+}]
+*/
+const limitation = 120
+function showStatus(){
+    let totalAmount = 0
+
+    if(activities.length == 0){
+        console.log("Add some activities before calling showStatus")
+    }else{
+        for(let i = 0; i <  activities.length ; i++)
+        totalAmount += activities[i].duration
+    if(totalAmount < limitation){
+         return `You have added ${ activities.length} activities. They amount to ${totalAmount} min. of usage`
+    }else{
+        return "You have reached your limit, no more smartphoning for you!"
+    }
+       
+
+    }
+    
+}
+
+
+console.log(showStatus(activities)); // will log out this "You have added 3 activities. They amount to 78 min. of usage"
