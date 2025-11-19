@@ -77,3 +77,46 @@ function logOutSeriesText(seriesDurations){
   console.log(`In total that is ${totalPercentage.toFixed(3)}% of my life`);
 }
 logOutSeriesText(seriesDurations)
+
+
+
+
+
+
+const notes = [];
+function saveNote(content, id){
+    notes.push(({content, id}))
+}
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+console.log(notes);
+
+
+
+
+
+function getNote(id) {
+     if (id === undefined || isNaN(id)) {
+    console.log("Error: id must be a number");
+    return;
+    }
+
+    for (let i = 0; i < notes.length; i++) {
+    if (notes[i].id === id) {
+      return notes[i];
+    }
+  }
+    console.log("Error: Note not found");
+}
+const firstNote = getNote(1);
+console.log(firstNote); 
+
+
+
+function logOutNotesFormatted(){
+     for(let i = 0; i < notes.length; i++){
+        const savedNotes = notes[i]
+       console.log(`The note with id: ${savedNotes.id}, has the following note text: ${savedNotes.content}`)
+}
+}
+logOutNotesFormatted()
