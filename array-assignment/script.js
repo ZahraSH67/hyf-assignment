@@ -18,3 +18,21 @@ console.log(names); // ['Peter', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'Katrin
 
 
 
+
+
+const travelInformation = {
+  speed: 50,
+  destinationDistance: 432,
+};
+
+function arrivalTime(information) {
+  const travelTime = information.destinationDistance / information.speed; // in hours
+
+  const hours = Math.floor(travelTime);
+  const minutes = Math.round((travelTime - hours) * 60); // convert decimal hours to minutes
+
+  return `${hours} hours and ${minutes} minutes`;
+}
+
+const travelTime = arrivalTime(travelInformation);
+console.log(travelTime); // 8 hours and 38 minutes
