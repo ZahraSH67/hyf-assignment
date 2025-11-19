@@ -36,3 +36,44 @@ function arrivalTime(information) {
 
 const travelTime = arrivalTime(travelInformation);
 console.log(travelTime); // 8 hours and 38 minutes
+
+
+
+
+const seriesDurations = [
+  {
+    title: "Game of thrones",
+    days: 3,
+    hours: 17,
+    minutes: 48,
+  },
+  {
+    title: "Dark",
+    days: 0,
+    hours: 21,
+    minutes: 40,
+  },
+  {
+    title: "Friends",
+    days: 7,
+    hours: 10,
+    minutes: 24,
+  },
+];
+
+function logOutSeriesText(seriesDurations){
+    const lifeMinutes = 80 * 365 * 24 * 60; //Lifetime in minutes
+    let totalPercentage = 0;
+    for(let i = 0; i < seriesDurations.length; i++){
+        const series = seriesDurations[i];
+        const seriesMinutes = series.days * 24 * 60 + series.hours * 60 + series.minutes;
+
+        // calculate percentage of life
+        const percentage = (seriesMinutes / lifeMinutes) * 100;
+        totalPercentage += percentage;
+        console.log(`${series.title} took ${percentage.toFixed(3)}% of my life`);
+    }
+
+  console.log(`In total that is ${totalPercentage.toFixed(3)}% of my life`);
+}
+logOutSeriesText(seriesDurations)
