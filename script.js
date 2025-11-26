@@ -121,6 +121,23 @@ function getReply(command) {
     return ` Timer set for ${time} minutes`;
   }
 
+  if (command.startsWith("Convert")) {
+    if (command.includes("kilometers")) {
+      const distance = Number(
+        command.slice(8, command.indexOf("kilometers to miles")).trim()
+      );
+      const amount = distance * 0.621371;
+      return `${distance} kilometers is ${amount} miles`;
+    }
+    if (command.includes("Celsius")) {
+      const temperature = Number(
+        command.slice(8, command.indexOf("Celsius to Fahrenheit")).trim()
+      );
+      const amount = (temperature * 9) / 5 + 32;
+      return `${temperature} Celsius is ${amount} Fahrenheit `;
+    }
+  }
+
   return "I didn't understand that command.";
 }
 
@@ -133,8 +150,8 @@ console.log(getReply("What is on my todo?"));
 console.log(getReply("What day is it today?"));
 console.log(getReply("Set a timer for 1 minutes"));
 console.log(getReply("How old are you?"));
-
-
+console.log(getReply("Convert 5 kilometers to miles"));
+console.log(getReply("Convert 15 Celsius to Fahrenheit "));
 
 // link to my codeWars profile
 //https://www.codewars.com/users/ZahraSH67
