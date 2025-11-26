@@ -133,3 +133,8 @@ console.log(getReply("What is on my todo?"));
 console.log(getReply("What day is it today?"));
 console.log(getReply("Set a timer for 1 minutes"));
 console.log(getReply("How old are you?"));
+
+
+
+// link to my codeWars profile
+//https://www.codewars.com/users/ZahraSH67
