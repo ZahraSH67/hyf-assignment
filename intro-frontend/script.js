@@ -45,6 +45,12 @@ retryBtn.addEventListener("click", () => {
 
 
 
+//  Katas on CodeWars:
+// https://www.codewars.com/users/ZahraSH67
+
+
+
+
 
 
 
