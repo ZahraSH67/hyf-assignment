@@ -1,22 +1,17 @@
 app.get("/users/:id", async (req, res) => {
-    const id = req.params.id;
-    const result = await knex.raw(`SELECT * FROM users WHERE id = ${id}`);
-    res.send(result);
+  const id = req.params.id;
+  const result = await knex.raw(`SELECT * FROM users WHERE id = ${id}`);
+  res.send(result);
 });
-
-
-
 
 app.get("/delete-user", async (req, res) => {
-    const id = req.query.id;
-    await knex.raw(`DELETE FROM users WHERE id = ${id}`);
-    res.send("User deleted");
+  const id = req.query.id;
+  await knex.raw(`DELETE FROM users WHERE id = ${id}`);
+  res.send("User deleted");
 });
 
-
-
 app.get("/", (req, res) => {
-    res.send(`
+  res.send(`
         <!DOCTYPE html>
         <html>
         <head>
